@@ -1,0 +1,44 @@
+public class HelloWorld{
+    public static  void spiral(int r_len , int c_len, int a[][])
+    {
+       int r=0,c=0,i;
+       while(r<r_len && c<c_len)
+       {
+           for(i=c;i<c_len;++i)
+           {
+               System.out.print(" "+a[r][i]);
+           }
+           r++;
+           for(i=r;i<r_len;++i)
+           {
+               System.out.print(" "+a[i][c_len-1]);
+           }
+           c_len--;
+           if(r<r_len)
+           {
+                for(i=c_len-1;i>=c;--i)
+               {
+                   System.out.print(" "+a[r_len-1][i]);
+               }
+               r_len--;
+           }
+           if(c<c_len)
+           {
+                for(i=r_len-1;i>=r;--i)
+               {
+                   System.out.print(" "+a[i][c]);
+               }
+               c++;
+            }
+       }
+    }
+     public static void main(String []args){
+         int a[][] = { { 1, 2, 3, 4, 5, 6 },
+                      { 7, 8, 9, 10, 11, 12 },
+                      { 13, 14, 15, 16, 17, 18 }
+                     };
+         int r=3, c=6;
+         spiral(r,c,a);
+         
+     }
+}
